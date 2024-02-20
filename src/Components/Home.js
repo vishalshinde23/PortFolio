@@ -22,13 +22,13 @@ function Home() {
     <div name="home" className=" w-full h-[500px]  ">
        <div className='max-w-screen h-[500px] py-6  flex flex-col justify-center items-center mx-auto gap-6    md:flex-row text-white  shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]'>
      
-       <div  smooth duration={500} data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000" className=" w-1/2 p-2  block flex-col gap-8 justify-center items-center  mt-10 mx-auto " >
-            <h2 data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-duration="1000" className=' animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-bold  font-black>My Name is<span className="font-bold text-center text-5xl mt-4 mb-4 text-sky-300'>
-          I Am Vishal Shinde
+       <div  smooth duration={500} data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000" className=" w-[300px]  md:w-1/2 p-2  block flex-col gap-8 justify-center items-center  mt-10 mx-auto " >
+            <h2 data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-duration="1000" className=' mt-10 text-3xl animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-bold text-center md:text-5xl md:mt-4 mb-4 text-sky-300'>
+         HI, I Am Vishal Shinde
             </h2>
             <div data-aos="fade-in" data-aos-delay="400" data-aos-duration="2000" className=" flex flex-col justify-center items-center mx-auto gap-2 my-4 mt-4 mb-4 ">
             
-           <div data-aos="fade-in" data-aos-delay="400" data-aos-duration="2000" className="flex flex-col mt-4 mb-4">
+           <div data-aos="fade-in" data-aos-delay="400" data-aos-duration="2000" className=" text-[30px]   ml-10 text-center w-[310px] h-[60px]  md:h-[100px] md:w-[500px] md:text-[40px] flex  md:mt-4 md:mb-4">
            <TypeAnimation
   sequence={[
     'Mern-Stack Developer ',
@@ -42,7 +42,7 @@ function Home() {
     
     
   ]}
-  style={{ fontSize: '3em', color:'yellow' }}
+  style={{  color:'yellow' }}
   repeat={Infinity}
 />
 
@@ -54,12 +54,12 @@ function Home() {
                                 <MdOutlineArrowRightAlt size={25} />
                             </span>
                         </Link>
-                        <a target='_blank' rel="noreferrer"  href="mailto:vishalshinde18122000@gmail.com" smooth duration={500} data-aos="fade-up" data-aos-delay="1000" data-aos-duration="2500" className='group hover:scale-105 rounded w-1/2 h-8 px-3 flex items-center bg-gradient-to-r from-indigo-600 via-purple-600 to-orange-600 justify-center cursor-pointer mt-5 ' >
+                        <a target='_blank' rel="noreferrer"  href="mailto:vishalshinde18122000@gmail.com" smooth duration={500} data-aos="fade-up" data-aos-delay="1000" data-aos-duration="2500" className='group hover:scale-105 rounded   h-8 px-5 flex items-center bg-gradient-to-r from-indigo-600 via-purple-600 to-orange-600 justify-center cursor-pointer mt-5 ' >
 
-                            <span className='pr-2'>
+                            <span className='pr-2    '>
                                 <HiOutlineMail size={25} />
                             </span>
-                            Hire Me
+                            Hire 
                         </a>
                         <a target='_blank' rel="noreferrer" href="https://www.linkedin.com/in/vishalshinde12/" smooth duration={550} data-aos="fade-up" data-aos-delay="2000" data-aos-duration="3000" className='group hover:scale-105 rounded w-auto h-8 px-1 flex items-center bg-none justify-center cursor-pointer mt-5 ' >
 
@@ -82,7 +82,7 @@ function Home() {
       
     <div className='w-1/3'>
         
-            <img src={Profile} alt="my profile"smooth duration={500} data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000" className=' bg-blue-900 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] rounded-lg w-[260px]  lg:w-[320px] my-5  hover:scale-105 duration-300 sm:ease-in'/>
+            <img src={Profile} alt="my profile"smooth duration={500} data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000" className=' bg-blue-900 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] rounded-lg w-[200px]  lg:w-[320px] my-5  hover:scale-105 duration-300 sm:ease-in'/>
        
     </div>
   

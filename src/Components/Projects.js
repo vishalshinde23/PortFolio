@@ -29,8 +29,8 @@ function Projects() {
    })
 
   return (
-    <div name="project" className= ' text-white w-full min-h-min flex flex-col items-center shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]  gap-10 mb-8 '>
-      <h3 smooth duration={500} data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000" className='text-center my-6   text-6xl '>
+    <div name="project" className= ' text-white w-full min-h-min mt-14 flex flex-col items-center shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]  gap-10 mb-8 '>
+      <h3 smooth duration={500} data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000" className='text-center text-5xl  md:my-6   md:text-6xl '>
          Projects
       </h3>
       <div   smooth duration={500} data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000" className=' shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] w-[200px] p-4 md:w-[600px] flex flex-col rounded-md  md:flex-row justify-between gap-12 items-center bg-gradient-to-r from-black to-blue-900'>

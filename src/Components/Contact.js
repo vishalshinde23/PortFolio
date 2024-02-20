@@ -40,7 +40,7 @@ function Contact() {
     }
 
   return (
-    <section  name="contact" class=" h-[980px] mt-[-80px]    dark:bg-gray-900">
+    <section  name="contact" class=" h-[980px]  mt-[180px] md:mt-[-240px]    dark:bg-gray-900">
     <div  class="flex flex-col items-center justify-center gap-6 px-6   mx-auto md:h-full lg:py-0">
         <p href="#" class="flex  pb-6   text-6xl font-semibold text-gray-50 dark:text-[#EDF4F2]">
            Let's Chat     
