@@ -4,7 +4,7 @@ function ProjectCard({
   data,currentCard,setCurrentCard
 }) {
   return (
-    <div smooth duration={500} data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000"  className='bg-blue-900  place-items-center  hover:shadow-[5px_5px_0px_0px_rgba(109,40,217)]  w-[300px] h-[300px]     p-4 rounded-md'>
+    <div smooth duration={500} data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000"  className='bg-black  place-items-center  hover:shadow-[5px_5px_0px_0px_rgba(109,40,217)]  w-[300px] h-[300px]     p-4 rounded-md'>
       <div className={` ${currentCard==data?.heading  ? "bg-stone-700 shadow-[12px_12px_0_0] shadow-yellow-50"
           : "bg-blue-900-800"}`}
           onClick={()=>setCurrentCard(data?.heading)}>
@@ -24,10 +24,10 @@ function ProjectCard({
       
       <div className='flex flex-row justify-between px-4 gap-3'>
       
-        <div className={`${currentCard==data?.heading ?"text-white":"text-white"} bg-gradient-to-r from-black to-blue-900    text-xl  px-4 py-2 rounded-md`}>
+        <div className={`${currentCard==data?.heading ?"text-white":"text-white"} bg-gradient-to-r from-sky-600 to-blue-900    text-xl  px-4 py-2 rounded-md`}>
       <a href={data?.demo} target="_blank">demo</a>
         </div>
-        <div className={`${currentCard==data?.heading ?"text-white":"text-white"} bg-gradient-to-r from-black to-blue-900 border-white text-xl  px-4 p-2 rounded-md`}>
+        <div className={`${currentCard==data?.heading ?"text-white":"text-white"} bg-gradient-to-r from-sky-600 to-blue-900 border-white text-xl  px-4 p-2 rounded-md`}>
       <a href={data?.code} target="_blank">code</a>
         </div>
         </div>

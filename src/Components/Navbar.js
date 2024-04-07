@@ -27,7 +27,7 @@ function Navbar() {
     ]
     
   return (
-    <div className='flex  shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] justify-between items-center w-full h-20 px-4 text-[#e3eff1] '>
+    <div className='flex  shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] justify-between items-center w-full h-20 px-4 text-[#e3eff1] mb-12   z-40  align-center  mx-auto bg-gradient-to-r from-cyan-900 to-sky-900  fixed top-0 left-0 right-0  py-3 '>
             <div className='flex flex-row gap-1'>
                 <h3 className='text-4xl font-itim ml-4'>PortFolio</h3>
             </div>

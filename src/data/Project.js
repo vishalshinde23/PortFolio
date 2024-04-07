@@ -7,6 +7,7 @@ import StudyNotion from "../assets/StudyNotion1.jpeg"
 import WesternRecipe from "../assets/WesternRecipe1.jpeg"
 import getfit from "../assets/getFit1.jpeg"
 import ecommerce from "../assets/e-commerce.jpeg"
+import BlogX from "../assets/BlogX.jpeg"
 
 
 export const Project = [
@@ -14,16 +15,16 @@ export const Project = [
         tag: 'Mern-Stack',
         project : [
             {
-                heading : "StudyNotion-A Edtech Platform",
+                heading : "StudyNotion-An Edtech Platform",
                 src:StudyNotion,
                 code: 'https://github.com/vishalshinde23/studynotion',
                 demo : 'https://studynotion-zeta.vercel.app'
             },
             {
-                heading : "ZealShop-A Online clothng store",
-                src:ZealShop,
-                code: 'https://github.com/vishalshinde23/zealshop',
-                demo : 'https://zealshop.vercel.app'
+                heading : "OEPNAI-A Image generator",
+                src:TextImage,
+                code: 'https://gitfront.io/r/vishalshinde/uZW9cxPxGxpn/openAiImage/',
+                demo : 'https://open-ai-image-eight.vercel.app/'
             },
             {
                 heading : "GetFit-Fitness Tracking App",
@@ -53,10 +54,10 @@ export const Project = [
             },
             
             {
-                heading : "TextToImage-Text to Image ",
-                  src:TextImage,
-                  code: 'https://github.com/vishalshinde23/textImage',
-                  demo : 'https://text-image-three.vercel.app/'
+                heading : "BlogX-Blogs platform ",
+                  src:BlogX,
+                  code: 'https://github.com/vishalshinde23/Blogx',
+                  demo : 'https://blogx-gamma.vercel.app/tags/Remote-Work'
             },
             
         ]

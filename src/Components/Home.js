@@ -20,7 +20,7 @@ function Home() {
 
   return (
     <div name="home" className=" w-full h-[500px]  ">
-       <div className='max-w-screen h-[500px] py-6  flex flex-col justify-center items-center mx-auto gap-6    md:flex-row text-white  shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]'>
+       <div className='max-w-screen h-[500px] py-6  flex flex-col justify-center items-center mx-auto gap-6 mt-10   md:flex-row text-white  shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]'>
      
        <div  smooth duration={500} data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1000" className=" w-[300px]  md:w-1/2 p-2  block flex-col gap-8 justify-center items-center  mt-10 mx-auto " >
             <h2 data-aos="fade-left" data-aos-easing="ease-in-sine" data-aos-duration="1000" className=' mt-10 text-3xl animate-text bg-gradient-to-r from-teal-500 via-purple-500 to-orange-500 bg-clip-text text-transparent font-bold text-center md:text-5xl md:mt-4 mb-4 text-sky-300'>
