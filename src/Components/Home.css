@@ -1,0 +1,26 @@
+/* Home.css */
+
+/* Neon Shadow Effect */
+.neon-shadow {
+    position: relative;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.5), 0 0 15px rgba(0, 255, 0, 0.5), 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+.neon-shadow::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.6), 0 0 20px rgba(0, 255, 0, 0.6);
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.7;
+}
+
+/* Optional: additional styling for transition effect */
+.transform {
+    transition: transform 0.3s ease-in-out;
+}

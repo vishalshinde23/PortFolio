@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev":"nodemon index.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +17,8 @@
     "mongoose": "^8.1.1",
     "nodemailer": "^6.9.9",
     "nodemon": "^3.0.3"
+  },
+  "devDependencies": {
+    "bull": "^4.16.2"
   }
 }

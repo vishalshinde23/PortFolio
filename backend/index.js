@@ -11,7 +11,7 @@ const PORT=process.env.PORT ||5000;
 app.use(express.json());
 app.use(cors({
     // origin:'*',
-    origin:'https://port-folio-gray.vercel.app',
+    origin:"*",
     credentials:true,
 }))
 database.connect();

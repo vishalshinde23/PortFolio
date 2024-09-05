@@ -1,57 +1,97 @@
-import React, { useEffect } from 'react'
-// import  Profile from "../assets/Profile.jpeg"
+import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-
-
 function Skills() {
-  useEffect(()=>{
-    AOS.init({
-      duration:1000
-    })
-  })
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
-    <div name="skills" className='w-full h-full  mt-5 pt-[50px]    '>
-     <h3 smooth duration={500} data-aos="fade-up" data-aos-delay="500" data-aos-duration="500" className=' text-5xl md:text-7xl mt-8  text-center p-8 text-white '>Skills</h3>
-     <div className='max-w-screen  grid grid-cols-2 mx-auto ml-[18px] md:ml-[-10px]   md:place-items-center gap-2  md:gap-8  md:grid-cols-4   text-white'>
-      <div smooth duration={500} data-aos="fade-up" data-aos-delay="500" data-aos-duration="500"  className="   outline-white p-4 w-[100px] md:w-2/4 rounded-md flex flex-col md:flex-1 h-[320px]  md:h-screen  gap-4">
-        <h3 className='text-xl md:text-2xl hover:border-[1px] w-[120px] md:w-[180px]  text-center p-2 rounded-md shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] bg-black border-white font-bold font-serif'>FrontEnd</h3>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  text-center p-2 rounded-md  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]   hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif  bg-black '>ReactJs</p>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px] shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] bg-black border-white font-bold font-serif'>JavaScript</p>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black '>HTML5</p>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px] shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black '>TailwindCss</p>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black'>CSS</p>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black'>REST API</p>
+    <section id="skills" className=" py-16 px-6 md:px-12">
+      <div className="container mx-auto text-center">
+        <h2
+          data-aos="fade-up"
+          className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 mb-6"
+        >
+          My Skills
+        </h2>
+        <p
+          data-aos="fade-up"
+          data-aos-delay="300"
+          className="text-xl text-gray-300 mb-12"
+        >
+          2 years of experience as a{' '}
+          <span className="font-semibold text-yellow-300">MERN Stack Developer</span>{' '}
+          at Mind Spark Technology.
+        </p>
 
-      </div>
-      <div smooth duration={500} data-aos="fade-up" data-aos-delay="500" data-aos-duration="500" className="   outline-white  p-4 w-2/4   rounded-md    h-[320px]  md:h-screen flex flex-col  gap-4">
-        <h3 className=' text-xl  md:text-2xl hover:border-[1px] w-[120px] md:w-[180px]  text-center p-2 rounded-md shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] border-white font-bold font-serif bg-black'>Backend</h3>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black'>NodeJs</p>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black'>ExpressJs</p>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black '>MongoDB</p>
-      </div>
-      <div smooth duration={500} data-aos="fade-up" data-aos-delay="500" data-aos-duration="500" className="   outline-white mt-[100px] md:mt-2 p-4 w-2/4 h-[320px]  md:h-screen rounded-md flex flex-col  gap-4 ">
-        <h3 className='text-xl md:text-2xl hover:border-[1px] w-[120px] md:w-[180px]  text-center p-2 rounded-md shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] border-white font-bold font-serif bg-black'>Others</h3>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black'>C++</p>
-       
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black'>Data Structures & Algorithms</p>
-        
-      </div>
-      <div smooth duration={500} data-aos="fade-up" data-aos-delay="500" data-aos-duration="500" className="  mt-[100px] md:mt-2 outline-white p-4 w-2/4 h-[320px]  md:h-screen rounded-md flex flex-col  gap-4">
-        <h3 className='text-xl md:text-2xl w-[160px] md:w-[180px]   text-center p-2 hover:border-[1px] rounded-md shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] border-white font-bold font-serif bg-black'>Technologies</h3>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black'>Postman</p>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black'>Git</p>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black'>Github</p>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black'>Render</p>
-        <p className='hover:border-[1px] w-[120px] md:w-[180px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]  text-center p-2 rounded-md hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] border-white font-bold font-serif bg-black'>Vercel</p>
+        <div
+          data-aos="fade-up"
+          data-aos-delay="600"
+          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
+          {/* Frontend Skills */}
+          <div className="bg-gray-800 shadow-xl rounded-lg p-6 transform transition-transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
+            <h3 className="text-2xl font-semibold text-blue-400 mb-4">Frontend Skills</h3>
+            <ul className="text-gray-300 space-y-2">
+              <li className="skill-item">React.js</li>
+              <li className="skill-item">JavaScript</li>
+              <li className="skill-item">Tailwind CSS</li>
+              <li className="skill-item">CSS</li>
+              <li className="skill-item">REST APIs</li>
+            </ul>
+          </div>
 
+          {/* Backend Skills */}
+          <div className="bg-gray-800 shadow-xl rounded-lg p-6 transform transition-transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
+            <h3 className="text-2xl font-semibold text-green-400 mb-4">Backend Skills</h3>
+            <ul className="text-gray-300 space-y-2">
+              <li className="skill-item">Node.js</li>
+              <li className="skill-item">Express.js</li>
+              <li className="skill-item">MongoDB</li>
+            </ul>
+          </div>
+
+          {/* Other Skills */}
+          <div className="bg-gray-800 shadow-xl rounded-lg p-6 transform transition-transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
+            <h3 className="text-2xl font-semibold text-purple-400 mb-4">Other Skills</h3>
+            <ul className="text-gray-300 space-y-2">
+              <li className="skill-item">C++</li>
+              <li className="skill-item">Data Structures & Algorithms (DSA)</li>
+              <li className="skill-item">Postman</li>
+              <li className="skill-item">Render</li>
+              <li className="skill-item">Vercel</li>
+              <li className="skill-item">Git</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Experience Section */}
+        <div className="mt-12">
+          <h3
+            data-aos="fade-up"
+            data-aos-delay="900"
+            className="text-3xl font-extrabold text-gray-100 mb-4"
+          >
+            Professional Experience
+          </h3>
+          <div className="bg-gray-800 shadow-xl rounded-lg p-6 transform transition-transform hover:scale-105 hover:shadow-2xl duration-300 ease-in-out">
+            <p className="text-lg text-gray-300">
+              <span className="font-semibold text-yellow-300">MERN Stack Developer</span> at Mind Spark Technology
+              <br />
+              <span className="text-gray-500">June 2022 - Present</span>
+            </p>
+            <ul className="list-disc text-left mt-4 pl-5 text-gray-300">
+              <li>Developed scalable web applications using React.js, Node.js, and MongoDB.</li>
+              <li>Implemented dynamic user interfaces with Tailwind CSS for enhanced UX/UI.</li>
+              <li>Worked on RESTful APIs to ensure seamless data flow between frontend and backend.</li>
+            </ul>
+          </div>
+        </div>
       </div>
-    
-     </div>
-      
-    </div>
-  )
+    </section>
+  );
 }
 
-export default Skills
+export default Skills;
