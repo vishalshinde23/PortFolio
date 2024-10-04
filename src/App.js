@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-    <div className="bg-gradient-to-r from-emerald-900 via-teal-900 to-gray-900 text-white min-h-screen">
+    <div className="bg-gradient-to-r from-blue-700 via-teal-700 to-slate-700 text-white min-h-screen">
       <Navbar scrollToSection={scrollToSection} />
       <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
         <Element name="home" className="element">

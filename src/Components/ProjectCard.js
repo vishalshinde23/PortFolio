@@ -1,38 +1,64 @@
-import React from 'react'
+import React from 'react';
 
-function ProjectCard({
-  data,currentCard,setCurrentCard
-}) {
+function ProjectCard({ data, currentCard, setCurrentCard }) {
   return (
-    <div smooth duration={500} data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000"  className='bg-orange-200  place-items-center  hover:shadow-[5px_5px_0px_0px_rgba(109,40,217)]  w-[300px] h-[300px]     p-4 rounded-md'>
-      <div className={` ${currentCard===data?.heading  ? "bg-stone-700 shadow-[12px_12px_0_0] shadow-yellow-50"
-          : "bg-blue-900-800"}`}
-          onClick={()=>setCurrentCard(data?.heading)}>
+    <div
+      data-aos="fade-up"
+      data-aos-delay="500"
+      data-aos-duration="1000"
+      className={`relative bg-white shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out transform rounded-lg p-4 flex flex-col items-center justify-between w-[260px] h-[350px] m-4 ${
+        currentCard === data?.heading ? 'hover:scale-105' : ''
+      }`}
+      onClick={() => setCurrentCard(data?.heading)}
+      style={{ perspective: '1000px' }} // Add perspective for parallax
+    >
+      {/* Image Section */}
+      <div className="relative w-full h-[150px] mb-4 overflow-hidden rounded-t-lg">
+        <img
+          src={data?.src}
+          alt={data?.heading}
+          className="object-cover w-full h-full rounded-lg transition-transform duration-700 hover:scale-110"
+        />
+      </div>
 
+      {/* Title Section */}
+      <div
+        className={`text-lg font-bold mb-2 ${
+          currentCard === data?.heading ? 'text-blue-500' : 'text-gray-800'
+        }`}
+      >
+        {data?.heading}
       </div>
-     
-      
-      <div className={`${currentCard===data?.heading ?"text-white":"text-slate-600"}    `}>
-       {
-        <img src={data?.src} className=' border-[1px] border-yellow-300 rounded-md h-[170px] w-[270px]  shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]'/>
-       }
+
+      {/* Buttons for Demo and Code */}
+      <div className="flex flex-row justify-between w-full gap-2">
+        <a
+          href={data?.demo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`w-full text-center py-2 rounded-md text-white transition-all duration-500 ease-out hover:scale-105 ${
+            currentCard === data?.heading
+              ? 'bg-gradient-to-r from-purple-500 to-pink-600'
+              : 'bg-gradient-to-r from-blue-500 to-teal-500'
+          }`}
+        >
+          Demo
+        </a>
+        <a
+          href={data?.code}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`w-full text-center py-2 rounded-md text-white transition-all duration-500 ease-out hover:scale-105 ${
+            currentCard === data?.heading
+              ? 'bg-gradient-to-r from-purple-500 to-pink-600'
+              : 'bg-gradient-to-r from-blue-500 to-teal-500'
+          }`}
+        >
+          Code
+        </a>
       </div>
-      <div className={`${currentCard===data?.heading ?"text-white":"text-white"} hover:${data?.heading} text-center text-white  mt-2 bg-blue-900   p-2 rounded-md mb-2  font-bold`}>
-     {data?.heading}
-      </div>
-      
-      
-      <div className='flex flex-row justify-between px-4 gap-3'>
-      
-        <div className={`${currentCard===data?.heading ?"text-white":"text-white"} bg-gradient-to-r from-sky-600 to-blue-900    text-xl  px-4 py-2 rounded-md`}>
-      <a href={data?.demo} target="_blank">demo</a>
-        </div>
-        <div className={`${currentCard===data?.heading ?"text-white":"text-white"} bg-gradient-to-r from-sky-600 to-blue-900 border-white text-xl  px-4 p-2 rounded-md`}>
-      <a href={data?.code} target="_blank">code</a>
-        </div>
-        </div>
     </div>
-  )
+  );
 }
 
-export default ProjectCard
+export default ProjectCard;
