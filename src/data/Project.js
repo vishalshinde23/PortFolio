@@ -20,12 +20,7 @@ export const Project = [
                 code: 'https://github.com/vishalshinde23/studynotion',
                 demo : 'https://studynotion-zeta.vercel.app'
             },
-            {
-                heading : "OEPNAI-A Image generator",
-                src:TextImage,
-                code: 'https://gitfront.io/r/vishalshinde/uZW9cxPxGxpn/openAiImage/',
-                demo : 'https://open-ai-image-eight.vercel.app/'
-            },
+            
             {
                 heading : "GetFit-Fitness Tracking App",
                 src:getfit,
@@ -43,14 +38,14 @@ export const Project = [
                heading:'Ecomozy-A Shopping website',
                src:ecommerce,
                code:'https://github.com/vishalshinde23/shopcart',
-               demo:'https://shopcart-kappa.vercel.app/'
+               demo:'https://ecomazy.vercel.app/'
             },
 
             {
                 heading : "Todo-A TodoList",
                   src:Todo,
                   code: 'https://github.com/vishalshinde23/TodoList',
-                  demo : 'https://todo-list-delta-seven-12.vercel.app/'
+                  demo : 'https://task-manager-ruddy-seven.vercel.app/'
             },
             
             {
