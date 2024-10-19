@@ -3,7 +3,7 @@ import React from 'react';
 function Experience() {
   return (
     <div className="w-full p-6 bg-gradient-to-r from-blue-300 to-purple-400">
-      <h3 data-aos="fade-up" data-aos-delay="900" className="text-4xl font-extrabold text-white mb-8 text-center">
+      <h3 data-aos="fade-up" data-aos-delay="900" className="text-4xl font-extrabold text-blue-700 mb-8 text-center">
         Professional Experience
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

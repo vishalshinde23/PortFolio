@@ -25,16 +25,16 @@ function Navbar({scrollToSection}) {
   ];
 
   return (
-    <div className='flex justify-between items-center w-full h-20 px-4 text-white bg-gradient-to-r from-gray-900 via-black to-gray-900 fixed top-0 left-0 right-0 z-40'>
+    <div className='flex bg-[#312e24] justify-between items-center w-full h-20 px-4   fixed top-0 left-0 right-0 z-40'>
       <div className='flex flex-row gap-1'>
-        <h3 className='text-4xl font-itim ml-4'>PortFolio</h3>
+        <h3 className='text-4xl p-2 rounded-md text-gray-100  font-itim ml-4'>PortFolio</h3>
       </div>
 
-      <ul className='hidden md:flex'>
+      <ul className='hidden gap-2 md:flex'>
         {Links.map(({ id, link }) => (
           <li
             key={id}
-            className='px-4 cursor-pointer capitalize font-medium text-gray-200 hover:text-blue-400 hover:scale-105 duration-200'
+            className='px-4 cursor-pointer capitalize font-medium text-gray-100  rounded-md  p-2 hover:text-blue-400 hover:scale-105 duration-200'
           >
             <Link
               to={link}
