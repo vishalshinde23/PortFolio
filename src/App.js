@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div 
-      className="relative bg-cover bg-center min-h-screen  text-white"
+      className="relative bg-cover bg-center min-h-screen bg-gradient-to-br from-gray-900 via-purple-600 to-gray-900  text-white"
       style={{ 
          // Set the compressed background image
         backgroundAttachment: 'fixed',  // Parallax effect

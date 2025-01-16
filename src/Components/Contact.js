@@ -1,125 +1,179 @@
-import React, { useState, useEffect } from 'react';
-import toast from 'react-hot-toast';
-import { addFile } from '../services/AddFile';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { HiOutlineMail } from 'react-icons/hi'; // Import contact icon
-import bac1 from "../assets/bac2.jpg"
-
+import React, { useState } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import { Mail, Send, User, MessageSquare } from "lucide-react";
+import toast from "react-hot-toast";
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
-
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
-  const { name, email, message } = formData;
-
-  const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
+  const springConfig = {
+    damping: 25,
+    stiffness: 700,
   };
-
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
+  const handleChange = (
+    e
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
   const onSubmit = async (e) => {
     e.preventDefault();
-    const res = await addFile(formData);
-
-    if (res?.status === 200) {
-      toast.success('Message sent successfully!');
-      setFormData({
-        name: "",
-        email: "",
-        message: ""
-      });
-    } else {
-      toast.error('Failed to send message.');
-    }
+    toast.success("Message sent successfully!");
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
   };
-
   return (
-    <section name="contact" className=" bg-[#e3f2fd]  lg:px-16 relative   py-16 px-6 md:px-12 crelative bg-cover bg-center min-h-screen "
-    style={{ 
-      backgroundImage: `url()`, // Set the compressed background image
-      backgroundAttachment: 'fixed',  // Parallax effect
-      backgroundSize: 'cover'         // Ensure full coverage
-    }}>
-      <div className="absolute inset-0 bg-white   text-gray-900  opacity-70 -z-10"></div>
-      <div className="flex flex-col items-center justify-center mx-auto border-dotted border-2 border-gray-300 p-6 max-w-5xl">
-        <h1 className="text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#4489D2] via-[#D3D9D4] to-[#4489D2] mb-6">
-          Contact Me
-        </h1>
-
-        <p className="text-lg text-gray-900 text-center mb-4">
-          I'm here to help! Feel free to reach out for collaborations, projects, or just a chat.
-        </p>
-
-        <div className="flex flex-col md:flex-row justify-center gap-10 w-[80vw] md:w-9/12 ">
-          <div className="flex-1 ">
-            <h2 className="text-3xl font-semibold mt-4 md:mt-0 mb-4 text-center">Get In Touch</h2>
-            <form className=" bg-[#e0e4e7]  text-gray-900 p-4 rounded-md border-dotted border-2 space-y-4 " onSubmit={onSubmit}>
-              <div>
-                <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  value={name}
-                  onChange={handleChange}
-                  className=" border-b-[3px] border-dotted border-gray-700    text-gray-900 rounded-lg  focus:ring-[#4489D2] focus:border-[#4489D2] block w-full p-3  outline-none"
-                  placeholder="Enter your name"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  value={email}
-                  onChange={handleChange}
-                  className=" border-b-[3px] border-dotted border-gray-900  rounded-lg focus:ring-[#4489D2] focus:border-[#4489D2] block w-full p-3  "
-                  placeholder="name@company.com"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-100">Message</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  value={message}
-                  onChange={handleChange}
-                  className="border-b-[3px] border-dotted border-gray-900 text-white rounded-lg focus:ring-[#4489D2] focus:border-[#4489D2] block w-full p-3 h-40 resize-none  "
-                  placeholder="Your message"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-[#4489D2] to-[#D3D9D4] text-white p-4 py-3 rounded-lg font-medium  transition-transform transform hover:scale-105"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <div
-          data-aos="fade-up"
-          data-aos-delay="500"
-          data-aos-duration="800"
-          className="w-full bg-white border-dotted border-2 rounded-lg  p-6 md:p-8 bg-opacity-10 backdrop-blur-lg mt-8"
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(30)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full mix-blend-screen filter blur-sm opacity-10 animate-float"
+            style={{
+              backgroundColor: `hsl(${Math.random() * 360}, 70%, 50%)`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              width: `${Math.random() * 6 + 2}px`,
+              height: `${Math.random() * 6 + 2}px`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          />
+        ))}
+      </div>
+      <div className="max-w-6xl mx-auto px-6 py-20 relative">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          className="text-center mb-16"
         >
-          <h1 className="text-2xl  font-bold leading-tight text-center text-gray-100">
-            Let's Chat! <HiOutlineMail className="inline-block ml-2" size={30} />
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-violet-400 via-pink-500 to-indigo-400 bg-clip-text text-transparent">
+            Get in Touch
           </h1>
+          <p className="text-xl text-white/70 max-w-2xl mx-auto">
+            Let's create something amazing together. Feel free to reach out for
+            collaborations or just a friendly hello.
+          </p>
+        </motion.div>
+        <div className="relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-violet-600/20 to-indigo-600/20 rounded-2xl blur-xl" />
+          <motion.form
+            onSubmit={onSubmit}
+            className="relative bg-white/10 backdrop-blur-sm border border-white/10 p-8 rounded-2xl space-y-6"
+          >
+            <div className="space-y-4">
+              <div className="relative">
+                <motion.div
+                  whileHover={{
+                    scale: 1.02,
+                  }}
+                  className="relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-indigo-500/20 rounded-lg blur-sm" />
+                  <div className="relative">
+                    <label className="block text-sm font-medium text-white/70 mb-2 ml-2">
+                      Name
+                    </label>
+                    <div className="relative">
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40" />
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full bg-white/5 border border-white/10 rounded-lg py-3 px-12 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-all"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              <div className="relative">
+                <motion.div
+                  whileHover={{
+                    scale: 1.02,
+                  }}
+                  className="relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-indigo-500/20 rounded-lg blur-sm" />
+                  <div className="relative">
+                    <label className="block text-sm font-medium text-white/70 mb-2 ml-2">
+                      Email
+                    </label>
+                    <div className="relative">
+                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40" />
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full bg-white/5 border border-white/10 rounded-lg py-3 px-12 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-all"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+              <div className="relative">
+                <motion.div
+                  whileHover={{
+                    scale: 1.02,
+                  }}
+                  className="relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 to-indigo-500/20 rounded-lg blur-sm" />
+                  <div className="relative">
+                    <label className="block text-sm font-medium text-white/70 mb-2 ml-2">
+                      Message
+                    </label>
+                    <div className="relative">
+                      <MessageSquare className="absolute left-3 top-4 w-5 h-5 text-white/40" />
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows={6}
+                        className="w-full bg-white/5 border border-white/10 rounded-lg py-3 px-12 text-white placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-violet-500/50 transition-all resize-none"
+                        placeholder="Your message here..."
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+            <motion.button
+              whileHover={{
+                scale: 1.02,
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
+              className="w-full bg-gradient-to-r from-violet-500 to-indigo-500 text-white py-4 px-6 rounded-lg font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+              type="submit"
+            >
+              <Send className="w-5 h-5" />
+              Send Message
+            </motion.button>
+          </motion.form>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

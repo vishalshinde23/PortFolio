@@ -1,158 +1,152 @@
-import React, { useEffect, useState } from 'react';
-import { TypeAnimation } from 'react-type-animation';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { Link } from 'react-scroll';
-import { HiOutlineMail } from 'react-icons/hi';
-import { BsGithub, BsLinkedin } from 'react-icons/bs';
-import { MdOutlineArrowRightAlt } from 'react-icons/md';
-import '../App.css';
-import './Home.css'; // Add custom styles here
-import Man from "../assets/Man.png";
-import bac1 from "../assets/bac2.jpg"
+import React, { useEffect, useState } from "react";
+import Typewriter from "typewriter-effect";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import { Github, Twitter, Linkedin, Mail, ExternalLink } from "lucide-react";
 
 function Home() {
-  const [showWelcome, setShowWelcome] = useState(true);
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
+  const springConfig = {
+    damping: 25,
+    stiffness: 700,
+  };
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    AOS.init({
-      duration: 800, // Animation duration for fade
-      once: false, // Animation happens every time on scroll
-    });
-
-    // Hide welcome message after 1 second
-    const timer = setTimeout(() => {
-      setShowWelcome(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
+    const moveCursor = (e) => {
+      cursorX.set(e.clientX - 16);
+      cursorY.set(e.clientY - 16);
+    };
+    window.addEventListener("mousemove", moveCursor);
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+    };
   }, []);
 
   return (
-    <section className="relative bg-[#e3f2fd] flex  items-center justify-center bg-cover bg-center min-h-screen"
-   >
-      {/* Welcome Message Overlay */}
-      {showWelcome && (
-        <div className="absolute inset-0 bg-[#124E66] flex items-center justify-center bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 text-6xl  transition duration-1000">
-          Welcome to the Portfolio
-        </div>
-      )}
-
-      {/* Main Content */}
-      <div className={`mx-auto max-w-screen-xl  flex flex-col lg:flex-row items-center justify-between  border-dotted border-2 gap-12 px-6 py-12 lg:h-screen transition duration-1000 ${showWelcome ? 'opacity-0 blur-md' : 'opacity-100'}`}>
-        
-        {/* Centered Image with Box Shadow */}
-        <div className="relative flex-shrink-0 mx-auto" data-aos="fade-right">
-          <img
-            src={Man}
-            alt="Man"
-            className=" w-40 h-40 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full shadow-lg object-cover border-dotted border-2 border-gray-600 transform hover:scale-105 transition-transform duration-500"
-            style={{
-              boxShadow: '0 20px 30px rgba(0, 0, 0, 0.7), 0 10px 20px rgba(255, 255, 255, 0.3)',
+    <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-purple-600 to-gray-900  text-white relative overflow-hidden">
+      <motion.div
+        className="w-8 h-8 bg-white/30 rounded-full fixed blur-sm"
+        style={{
+          x: cursorXSpring,
+          y: cursorYSpring,
+        }}
+      />
+    
+      <main className="max-w-6xl mx-auto px-8 py-20">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.8,
+          }}
+          className="text-center"
+        >
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
             }}
-          />
-        </div>
-
-        {/* Text Section */}
-        <div className="text-center lg:text-left lg:max-w-xl">
-        <h1 className="text-4xl hidden md:block font-extrabold sm:text-5xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 text-transparent bg-clip-text mb-4">
-  Welcome to My Portfolio
-</h1>
-
-
-          {/* TypeAnimation */}
-          <div className="text-xl sm:text-2xl lg:text-3xl mb-6 text-gray-900">
-            My name is Vishal Shinde & 
-            <p className=" block font-bold text-gray-900">
-              <span>I am a</span>{' '}
-              <TypeAnimation
-                sequence={[
-                  'MERN-Stack Developer',
-                  1000,
-                  'Full Stack Developer',
-                  1000,
-                  'ReactJs Developer',
-                  1000,
-                ]}
-                repeat={Infinity}
-                wrapper="span"
-                className="inline-block"
-                style={{ color: 'blue', marginLeft: '10px' }}
-              />
-            </p>
-            passionate about building web solutions.
-          </div>
-
-          {/* Icons Section with Gradient Box Shadows */}
-          <div className="flex justify-center lg:justify-start gap-8 mb-6">
-            {[
-              {
-                src: 'https://cdn.iconscout.com/icon/free/png-256/react-1-282599.png',
-                label: 'ReactJS',
-              },
-              {
-                src: 'https://cdn.iconscout.com/icon/free/png-256/nodejs-1-1174935.png',
-                label: 'NodeJS',
-              },
-              {
-                src: 'https://cdn.iconscout.com/icon/free/png-256/mongodb-4-1175139.png',
-                label: 'MongoDB',
-              },
-              {
-                src: 'https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png',
-                label: 'JavaScript',
-              },
-            ].map((icon, index) => (
-              <div
-                key={index}
-                data-aos="zoom-in"
-                className="group transform transition rounded-full duration-500  hover:scale-110"
-                style={{
-                  boxShadow: '0 10px 20px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(255, 215, 0, 0.3)',
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 0.2,
+            }}
+            className="text-5xl md:text-7xl font-bold m-8 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent"
+          >
+            Welcome to My Portfolio
+          </motion.div>
+          <div className="text-3xl md:text-4xl font-light text-white/90 mb-8">
+            My name is{" "}
+            <span className="font-semibold bg-gradient-to-r from-pink-400 to-indigo-400 bg-clip-text text-transparent">
+              Vishal Shinde
+            </span>{" "}
+            & I Am{" "}
+            <div className="h-20 mt-4">
+              <Typewriter
+                options={{
+                  strings: [
+                    "  Full Stack Developer",
+                    "FrontEnd developer",
+                    "Problem Solver",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  deleteSpeed: 50,
+                  delay: 80,
                 }}
-              >
-                <img
-                  src={icon.src}
-                  alt={icon.label}
-                  className="w-16 h-16 border-dotted border-2 shadow-lg rounded-full"
-                />
-                <p className="text-xs text-gray-900 mt-2 group-hover:text-white">
-                  {icon.label}
-                </p>
-              </div>
-            ))}
+              />
+            </div>
           </div>
-
-          {/* Buttons */}
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-center w-full">
-            {/* View My Work Button */}
-            <Link to="projects" smooth duration={500} className="w-full lg:w-auto">
-              <button className="w-full px-8 py-4 bg-gradient-to-r from-[#4489D2] to-[#124E66] text-gray-900 font-semibold rounded-lg hover:bg-[#2E3944] border-dotted border-2 transition duration-300 text-center">
-                View My Work
-              </button>
-            </Link>
-
-            {/* Portfolio Link */}
-            <Link to="projects" smooth duration={500} className="w-full lg:w-auto">
-              <div className="group w-full px-4 py-2 bg-gradient-to-r from-[#124E66] to-[#4489D2] rounded-lg flex items-center justify-center cursor-pointer transition-transform transform hover:scale-105 border-dotted border-2 text-center shadow-lg">
-                Portfolio
-                <span className="ml-2 transition-transform group-hover:rotate-90 duration-300">
-                  <MdOutlineArrowRightAlt size={25} />
-                </span>
-              </div>
-            </Link>
-
-            {/* GitHub Link */}
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/vishalshinde23" className="w-full lg:w-auto">
-              <div className="group bg-[#2E3944] px-4 py-2 rounded-lg flex items-center justify-center cursor-pointer transition-transform border-dotted border-2 transform hover:scale-105 text-center shadow-lg">
-                <BsGithub size={25} />
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+          <motion.button
+            whileHover={{
+              scale: 1.05,
+            }}
+            whileTap={{
+              scale: 0.95,
+            }}
+            className="bg-gradient-to-r from-pink-500 to-indigo-500 px-8 py-4 rounded-full font-medium inline-flex items-center gap-2 hover:opacity-90 transition-opacity text-lg shadow-lg shadow-purple-500/20"
+          >
+            View My Work
+            <ExternalLink className="w-5 h-5" />
+          </motion.button>
+        </motion.div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.8,
+            delay: 0.4,
+          }}
+          className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
+          {[
+            {
+              title: "Frontend",
+              description: "React, Next.js, Tailwind CSS",
+            },
+            {
+              title: "Backend",
+              description: "Node.js, Express, MongoDB",
+            },
+            {
+              title: "Tools",
+              description: "Git, Docker, AWS",
+            },
+          ].map((skill, index) => (
+            <motion.div
+              key={index}
+              whileHover={{
+                y: -5,
+              }}
+              className="p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-colors"
+            >
+              <h3 className="text-xl font-semibold mb-2 bg-gradient-to-r from-pink-400 to-indigo-400 bg-clip-text text-transparent">
+                {skill.title}
+              </h3>
+              <p className="text-white/70">{skill.description}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </main>
+    </div>
   );
 }
+
 
 export default Home;

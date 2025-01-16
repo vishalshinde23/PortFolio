@@ -6,7 +6,7 @@ function ProjectCard({ data, currentCard, setCurrentCard }) {
       data-aos="fade-up"
       data-aos-delay="500"
       data-aos-duration="1000"
-      className={`relative bg-[#e0e4e7] text-gray-900 shadow-md hover:shadow-2xl border-dotted border-2 transition-all duration-300 ease-in-out transform rounded-lg p-4 flex flex-col items-center justify-between w-[260px] h-[350px] m-4 ${
+      className={`relative bg-gradient-to-r from-pink-500 via-purple-500  text-gray-900 shadow-md hover:shadow-2xl border-dotted border-2 transition-all duration-300 ease-in-out transform rounded-lg p-4 flex flex-col items-center justify-between w-[260px] h-[350px] m-4 ${
         currentCard === data?.heading ? 'hover:scale-105' : ''
       }`}
       onClick={() => setCurrentCard(data?.heading)}
