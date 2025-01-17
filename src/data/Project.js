@@ -8,6 +8,7 @@ import WesternRecipe from "../assets/WesternRecipe1.jpeg"
 import getfit from "../assets/getFit1.jpeg"
 import ecommerce from "../assets/e-commerce.jpeg"
 import BlogX from "../assets/BlogX.jpeg"
+// import Protrack from "..assets/Protrack.jpeg"
 
 
 export const Project = [
@@ -24,6 +25,13 @@ export const Project = [
             {
                 heading : "GetFit-Fitness Tracking App",
                 src:getfit,
+                code: 'https://github.com/vishalshinde23/fitness-track',
+                demo : 'https://fitness-tracki.vercel.app/'
+            },
+           
+            {
+                heading : "ZealShop- online shopping website",
+                src:ZealShop,
                 code: 'https://github.com/vishalshinde23/fitness-track',
                 demo : 'https://fitness-tracki.vercel.app/'
             },

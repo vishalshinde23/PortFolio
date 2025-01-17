@@ -25,7 +25,7 @@ function Navbar({scrollToSection}) {
   ];
 
   return (
-    <div className='flex bg-[#312e24] justify-between items-center w-full h-20 px-4   fixed top-0 left-0 right-0 z-40'>
+    <div className='flex poppins-regular bg-[#312e24] justify-between items-center w-full h-20 px-4   fixed top-0 left-0 right-0 z-40'>
       <div className='flex flex-row gap-1'>
         <h3 className='text-4xl p-2 rounded-md text-gray-100  font-itim ml-4'>PortFolio</h3>
       </div>

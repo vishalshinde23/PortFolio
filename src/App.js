@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 import './App.css';
 import Navbar from './Components/Navbar';
+// import { Hero } from "@/components/blocks/hero"
+
 import bac1 from "./assets/bac2.jpg"; // Compressed and optimized image
 import { Element, scroller } from 'react-scroll'; // Import from react-scroll
 

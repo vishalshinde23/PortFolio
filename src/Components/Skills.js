@@ -10,7 +10,7 @@ function Skills() {
     other: ["C++", "DSA", "Postman", "Render", "Vercel", "Git"],
   };
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-purple-600 to-gray-900 text-white relative overflow-hidden px-6 py-20">
+    <div className="w-full poppins-regular min-h-screen bg-slate-950 text-white relative overflow-hidden px-6 py-20">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div

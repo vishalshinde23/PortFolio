@@ -34,7 +34,7 @@ function Contact() {
     });
   };
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
+    <div className="min-h-screen poppins-regular bg-slate-950 text-white relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
